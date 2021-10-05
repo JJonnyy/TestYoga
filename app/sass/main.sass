@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap')
+@import url(https://allfont.ru/allfont.css?fonts=freestyle-script-normal)
+
+$colorMenu: #5363DB
+$colorBlack: #555555
+$colorGreyForm: #888888
+$colorGrey: #777777
+$colorWhite: #FFFFFF
+$colorBlue: #5B6CEB
+
+.clearfix::after 
+  content: ""
+  clear: both
+  display: block
+*
+    margin: 0
+    padding: 0
+
+html, body
+      font-family: 'Open Sans' , sans-serif
+.logo
+    margin: 0 145px
+.container
+    max-width: 1170px
+    height: auto
+    margin: 0 auto
+.row
+  position: relative
+  width: 100%
+  height: 100%
+  margin: 0 auto
+
+//menu
+
+
+.menu-main
+  list-style: none
+  padding-top: 15px
+  text-align: center
+  background: white
+  display: flex
+  align-items: center
+  justify-content: center
+
+  li
+    display: inline-block
+
+    &:last-child:after
+      content: none
+
+  a
+    text-decoration: none
+    font-family: 'Open Sans' , sans-serif
+    font-weight:300
+    letter-spacing: 1px
+    position: relative
+    padding-bottom: 20px
+    margin: 0 15px 0 15px
+    font-size: 14px
+    //display: inline-block
+    transition: color .2s
+    color: $colorBlack
+
+    &:visited
+      color: $colorBlack
+
+    &.current, &:hover
+      color: $colorMenu
+
+    &:before, &:after
+      content: ""
+      position: absolute
+      height: 1px
+      top: auto
+      right: 50%
+      bottom: -5px
+      left: 50%
+      background: $colorMenu
+      transition: .8s
+
+    &:hover:before
+      left: 0
+
+  .current:before
+    left: 0
+
+  a:hover:after, .current:after
+    right: 0
+
+@media (max-width: 550px)
+  .menu-main
+    padding-top: 0
+
+    li
+      display: block
+
+      &:after
+        content: none
+
+    a
+      padding: 25px 0 20px
+      margin: 0 30px
+
+header 
+    margin-bottom: 10px
+
+//////////////////////////////////////section 1//////////////////////////////
+
+#trialclass
+    width: 100%
+    height: 600px
+    background-image: url('../media/1.png')
+    background-size: cover
+    background-position: top
+    background-repeat: no-repeat
+    position: relative
+
+#trialclass::after 
+    content: ""
+    position: absolute
+    z-index: 2
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(83,99,219, .8)
+
+#trialclass .row
+  padding-top: 103px
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 10
+
+#form_trial_class
+  max-width: 300px
+  max-height: 391px
+  background: white
+  border-radius: 20px
+  padding: 30px
+  margin-right: 90px
+  
+#form_trial_class input
+  &:last-of-type
+    margin-bottom: 31px
+
+.form-input
+  min-width: 230px
+  min-height: 50px
+  background: #F2F2F2
+  //padding-top: 13px 
+  padding-left: 10px
+  margin-bottom: 17px
+  border-radius: 8px
+
+.form-input, .form-input:focus, .form-input:active
+  outline: none !important
+  border: none !important
+  text-decoration: none !important  
+
+
+.form_button
+  background: $colorBlue
+  color: $colorWhite
+  width: 170px
+  height: 50px
+  border-radius: 8px
+  border: none
+  font-size: 16px
+  float: right
+
+.trial-form_text
+  color: $colorMenu
+  font-size: 26px
+  margin-bottom: 25px
+  
+.setion1-text1
+  color: $colorWhite
+  font-size: 48px
+  font-weight: 600
+  line-height: 72px
+  margin-bottom: 20px
+
+.setion1-text2
+  color: $colorWhite
+  font-size: 40px
+  font-weight: 300    
+  line-height: 48px
+  font-family: 'Freestyle Script Normal', arial
+
+
+
+//////////////////////////////////////section 2 yoga_program//////////////////////////////
+
+#yoga_program
+ width: 100%
+ min-height: 800px
+ padding-top: 112px
+
+.block_-yoga-program
+  border: 1px red
+  width:100%
+  height: max-content
+
+.block_yoga-program-text p
+  text-align: center
+
+.yoga-program-text1
+  color: $colorBlue
+  font-size: 30px
+  font-weight: 800
+  line-height: 45px 
+
+.yoga-program-text2
+  color: $colorGrey
+  font-size: 41px
+  line-height: 65px 
+  font-family: 'Freestyle Script Normal', arial
+  margin-bottom: 68px
+
+.block_yoga-program-content
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+@mixin yoga-program-item
+  display: flex
+  min-width: 500px
+  width: 570px
+  height:300px
+  box-shadow: 3px 3px 20px #707070
+  margin-bottom: 25px
+  border-radius: 8px
+    
+.yoga-program-content-item
+  @include yoga-program-item
+  
+.program-content-item-img
+  border-top-left-radius: 8px
+  border-bottom-left-radius: 8px
+
+.program-content-item-text
+  padding: 43px 30px
+
+.program-item-text-title
+  color: $colorGrey
+  font-size: 20px
+  margin-bottom: 26px
+
+.program-item-text-content
+  color: $colorBlack
+  font-size: 14px
+  line-height: 22px
+  margin-bottom: 10px
+
+.program-item-text-name
+  font-size: 14px
+  color: #999999
+
+////////////////////////////////////// section 3 gallery //////////////////////////////
+
+#gallery
+  width: 100%
+  min-height: 700px
+
+.galery-container
+  display: flex
+  flex-wrap: wrap
+  position: relative
+
+.galery-item
+  width: 480px
+  height: 350px
+
+.image
+  margin: 30px
+  float: left
+  cursor: pointer
+  //max-height: 100px
+
+.popup
+  position: fixed
+  height: 100%
+  width: 100%
+  top: 50%
+  left: 50%
+  margin-right: 50%
+  transform: translate(-50%, -50%)
+  display: none
+  text-align: center
+
+.popup_bg
+  background: rgba(0, 0, 0, 0.4)
+  position: fixed
+  z-index: 1
+  height: 100%
+  width: 100%
+
+.popup_img
+  position: relative
+  margin: 0 auto
+  z-index: 2
+  max-height: 94%
+  max-width: 94%
+  margin: 1% 0 0 0
