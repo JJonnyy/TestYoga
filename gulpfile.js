@@ -36,14 +36,35 @@ function styles() {
 	.pipe(browserSync.stream()) 
 }
 
+function cleandist() {
+	return del('dist/**/*', { force: true }) // Удаляем все содержимое папки "dist/"
+}
+function buildcopy() {
+	return src([ 
+		'app/css/**/*.min.css',
+		'app/js/**/*.min.js',
+		'app/**/*.html',
+		], { base: 'app' })
+	.pipe(dest('dist'))
+}
 function startwatch() {
 	watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
 	watch('app/**/' + preprocessor + '/**/*', styles);
 	watch('app/**/*.html').on('change', browserSync.reload);
 }
 
+function buildcopy() {
+	return src([ 
+		'app/css/**/*.min.css',
+		'app/js/**/*.min.js',
+		'app/**/*.html',
+		], { base: 'app' })
+	.pipe(dest('dist'))
+}
+
 exports.browsersync =  browsersync;
 exports.scripts =  scripts;
 exports.startwatch =  startwatch;
 exports.styles =  styles;
+exports.build = series( styles, scripts, buildcopy);
 exports.default = parallel(styles, scripts, browsersync, startwatch);
