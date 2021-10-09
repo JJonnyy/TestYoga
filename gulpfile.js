@@ -35,10 +35,6 @@ function styles() {
 	.pipe(dest('app/css/')) 
 	.pipe(browserSync.stream()) 
 }
-
-function cleandist() {
-	return del('dist/**/*', { force: true }) // Удаляем все содержимое папки "dist/"
-}
 function buildcopy() {
 	return src([ 
 		'app/css/**/*.min.css',
