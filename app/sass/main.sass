@@ -8,16 +8,15 @@ $colorGrey: #777777
 $colorWhite: #FFFFFF
 $colorBlue: #5B6CEB
 
-.clearfix::after 
-  content: ""
-  clear: both
-  display: block
 *
     margin: 0
     padding: 0
 
 html, body
       font-family: 'Open Sans' , sans-serif
+      color: $colorBlack
+      scroll-behavior: auto
+      scroll-behavior: smooth
 .logo
     margin: 0 145px
 .container
@@ -51,7 +50,7 @@ html, body
   a
     text-decoration: none
     font-family: 'Open Sans' , sans-serif
-    font-weight:300
+    font-weight: 300
     letter-spacing: 1px
     position: relative
     padding-bottom: 20px
@@ -104,12 +103,73 @@ html, body
 header 
     margin-bottom: 10px
 
+header
+  position: relative
+
+.menu-mob
+  display: none
+  width: 100%
+  height: 75px
+
+.menu-yoga-mob
+  background: url('../media/menu.svg') 0 0 repeat
+  background-position: center center
+  background-size: cover
+  display: block
+  width: 25px
+  height: 17px
+  position: absolute
+  left: 15px
+  top: 28px
+
+.menu-close
+  background: url('../media/close.png') 0 0 repeat
+  background-position: center center
+  background-size: cover
+  display: block
+  width: 28px
+  height: 28px
+  position: absolute
+  right: 20px
+  top: 20px
+  z-index: 100
+
+.menu-popup
+  background: #2c2e3e
+  display: none
+  position: absolute
+  left: -110%
+  top: 0
+  width: 250px
+  box-sizing: border-box
+  padding: 30px
+  z-index: 9999
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+
+  ul
+    margin: 0
+    padding: 0
+
+  li
+    list-style: none
+    margin: 10px 0
+    padding: 0
+
+    a
+      font-size: 18px
+      font-family: "Arial"
+      color: rgb(255, 255, 255)
+      line-height: 1.4
+      text-decoration: none
+
+.body_pointer *
+  cursor: pointer
 //////////////////////////////////////section 1//////////////////////////////
 
 #trialclass
     width: 100%
     height: 600px
-    background-image: url('../media/1.png')
+    background-image: url('../media/trial-background.png')
     background-size: cover
     background-position: top
     background-repeat: no-repeat
@@ -158,8 +218,7 @@ header
   border: none !important
   text-decoration: none !important  
 
-
-.form_button
+@mixin button
   background: $colorBlue
   color: $colorWhite
   width: 170px
@@ -167,6 +226,9 @@ header
   border-radius: 8px
   border: none
   font-size: 16px
+
+.form_button
+  @include button
   float: right
 
 .trial-form_text
@@ -197,9 +259,9 @@ header
  min-height: 800px
  padding-top: 112px
 
-.block_-yoga-program
+.block_yoga-program
   border: 1px red
-  width:100%
+  width: 100%
   height: max-content
 
 .block_yoga-program-text p
@@ -222,13 +284,14 @@ header
   display: flex
   flex-wrap: wrap
   justify-content: space-between
+  margin-bottom: 125px
 
 @mixin yoga-program-item
   display: flex
   min-width: 500px
   width: 570px
-  height:300px
-  box-shadow: 3px 3px 20px #707070
+  min-height: 300px
+  box-shadow: 3px 3px 30px rgba(112,112,112, .5)
   margin-bottom: 25px
   border-radius: 8px
     
@@ -240,6 +303,7 @@ header
   border-bottom-left-radius: 8px
 
 .program-content-item-text
+  height: max-content
   padding: 43px 30px
 
 .program-item-text-title
@@ -263,20 +327,35 @@ header
   width: 100%
   min-height: 700px
 
-.galery-container
+.gallery-container
   display: flex
   flex-wrap: wrap
   position: relative
+  justify-content: center
 
-.galery-item
+.gallery-item
   width: 480px
   height: 350px
+  position: relative
+  &:hover
+    .gallery-item-hover
+      opacity: 5
+      transition: 1s all ease-in-out
+
+.gallery-item-hover
+  background-image: url('../media/gallery-hover.png')  
+  background-repeat: no-repeat
+  width: 100%
+  height: 100%
+  position: absolute
+  z-index: 50
+  opacity: 0
+  transition: 1s all ease-in-out
 
 .image
-  margin: 30px
   float: left
   cursor: pointer
-  //max-height: 100px
+  z-index: 50
 
 .popup
   position: fixed
@@ -292,14 +371,545 @@ header
 .popup_bg
   background: rgba(0, 0, 0, 0.4)
   position: fixed
-  z-index: 1
+  z-index: 1000
   height: 100%
   width: 100%
 
 .popup_img
   position: relative
   margin: 0 auto
-  z-index: 2
+  z-index: 9999999
   max-height: 94%
   max-width: 94%
   margin: 1% 0 0 0
+////////////////////////////////////// section 4 about_us //////////////////////////////
+
+#about_us
+  padding-top: 125px
+
+.about_us-container
+  width: 100%
+  margin-bottom: 125px
+  display: flex
+
+.about_us-text-block
+  width: 50%
+  padding: 0 120px 0 0
+
+.about_us-title 
+  font-size: 30px
+  color: $colorBlue
+  margin-top: 15px
+  margin-bottom: 17px
+  line-height: 45px
+
+.about_us-text
+  color: $colorBlack
+
+.about_us-slider
+  width: 50%
+  height: 300px
+
+.slider-item
+  width: 100%
+  height: 100%
+
+.slider-item-img
+  width: 100%
+
+.slick-prev 
+  left: -30px
+  z-index: 500
+
+.slick-prev:before
+  content: url(../media/bt-arrow-prew.svg)
+
+.slick-next:before
+  content: url(../media/bt-arrow-next.svg)
+
+.slick-next
+  right: 10px
+  z-index: 500
+
+.slick-prev:before, .slick-next:before
+  color: $colorBlack
+
+.slick-prev, .slick-next 
+  top: 43%
+
+  
+/////////////////////////////// section 5 about-us-after//////////////////////////////////////////////////
+
+
+#about_us_after
+  width: 100%
+  min-height: 800px
+  background-image: url('../media/about-us-after-background.jpg')
+  background-size: cover
+  background-position: top
+  background-repeat: no-repeat
+  position: relative
+
+#about_us_after::after 
+  content: ""
+  position: absolute
+  z-index: 2
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba(83,99,219, .8)
+
+#about_us_after .row
+  padding: 125px  0px
+
+.about-us-after-container
+  width: 100%
+  height: 100%
+  z-index: 100
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+ 
+
+.about-us-after-item
+  width: 280px
+  height: 275px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.about-us-after-img
+  width: 70px
+  height: 70px
+  margin: 0 auto
+  display: flex
+  margin-bottom: 28.4px
+
+.about-us-after-title
+  text-align: center
+  font-size: 18px
+  font-weight: 600 
+  line-height: 27px
+  color: $colorWhite
+
+.about-us-after-text
+  text-align: center
+  line-height: 27px
+  color: $colorWhite
+  margin-bottom: 30px
+
+
+
+/////////////////////////////// section 6  Price//////////////////////////////////////////////////
+
+#yoga_price
+  width: 100%
+  min-height: 800px
+  background-image: url('../media/2.png')
+  background-repeat: no-repeat
+  background-position: right bottom
+  position: relative
+  padding-top: 101px
+
+#yoga_price::after 
+    content: ""
+    position: absolute
+    z-index: 2
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(83,99,219, .1)
+    
+#yoga_price .container
+  z-index: 100
+  position: relative
+
+.price-container
+  width: 100%
+  min-height: 495px
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  margin-bottom: 104px
+  
+
+.price-item-container
+  width: 370px
+  min-height: 495px
+  border-radius: 10px
+  box-shadow: 3px 3px 30px rgba(112,112,112, .5)
+  background: $colorWhite
+
+.price
+  width: 100%
+  min-height: 150px
+  padding: 20px  0 30px 0
+  margin-bottom: 35px
+  background: $colorBlue
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: 1s all ease-in-out
+
+  &
+    color: $colorWhite
+
+.price-number
+  display: flex
+  justify-content: center
+  align-items: end
+
+.price-dollar
+  font-size: 32px
+  margin-right: 20px
+  line-height: 36px
+
+.price-num
+  font-size: 67px
+  line-height: 75px
+  margin-right: 10px
+
+.price-month
+  font-size: 18px
+  text-transform: uppercase
+
+.price-conditions
+  width: 80%
+  display: flex
+  margin: 0 auto
+  flex-direction: column
+
+  p
+    text-transform: uppercase
+    font-size: 18px
+    font-weight: 400
+    padding-bottom: 10px 
+    color: $colorBlack
+    text-align: center
+
+
+  p:nth-child(-n+2)
+    &:after
+      content: ''
+      display: block
+      height: 1px
+      width: 100px
+      margin: 0 auto
+      margin-top: 20px
+      margin-bottom: 10px
+      background: #D7D7D7
+
+.button-container
+  padding-top: 20px
+  width: 100%
+  display: flex
+
+.price-button
+  @include button
+  margin: 0 auto
+  border-radius: 20px
+  cursor: pointer
+  transition: 1s all ease-in-out
+
+.button-hover
+    background: blue
+    transition: 1s all ease-in-out
+    transform: scale(1.05)
+
+
+.traine
+  padding-bottom: 200px
+
+.trainer-container
+  max-width: 100%
+  min-height: 250px
+  border-radius: 10px
+  box-shadow: 3px 3px 30px rgba(112,112,112, .5)
+  background: $colorWhite
+  display: flex
+  padding-top: 38px
+  padding-right: 150px
+
+.trainer-img
+  margin: 0 38px 0 63px
+
+.trainer-text-container
+  width: 100%
+  height: 155px
+  display: flex
+  font-size: 14px
+  position: relative
+
+.text-center-column
+  display: flex
+  flex-direction: column
+  padding-left: 30px 
+
+.trainer-text
+  padding: 0 30px 60px 0
+  font-size: 14px
+  font-weight: 400
+
+.text-elem
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+
+.text-elem2
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: flex-end
+
+.traine-line
+  width: 1px
+  height: 74px
+  background: #D7D7D7
+
+.trainer-pointer
+  height: 150px
+  position: absolute
+  top: 64px
+  right: -45px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.trainer-name
+  margin-bottom: 57px
+  span
+    font-size: 16px
+    font-weight: 600
+    color: $colorBlue
+
+.trainer-list
+  width: max-content
+  height: 72px
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.traine-next
+  display: flex
+  align-items: center
+
+.traine-next-name  
+  width: 100px
+  padding-left: 10px
+  span
+    color: $colorGrey
+
+/////////////////////////////// section 8  Footer//////////////////////////////////////////////////
+
+footer
+  width: 100%
+  min-height: 550px
+  background: $colorBlue
+  color: $colorWhite
+
+.footer-container
+  width: 100%
+  min-height: 450px
+  padding-top: 94px
+
+.footer-block
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+
+.footer-about
+  width: 471px
+  margin-right: 130px
+  margin-bottom: 10px
+  p
+    margin-bottom: 94px
+    
+.footer-social
+  display: flex
+  img 
+    margin-right: 17px
+
+.footer-contacts
+  width: 550px
+
+.cont
+   margin-bottom: 94px
+
+.footer-contact-item-block
+  display: flex
+  flex-wrap: wrap
+
+.footer-contact-item
+  width: 50%
+  display: flex
+  align-items: center
+  margin-bottom: 50px
+
+  img 
+    width: 21px
+    margin-right: 18px
+
+.footer-end
+  width: 100%
+  height: 100px
+  background: #5363D8
+  display: flex
+  align-items: center
+  justify-content: center
+  p
+    color: #B7BFFC
+    text-align: center
+    font-size: 16px
+    
+@media (max-width: 1300px)
+  .trainer-pointer
+    right: 0
+
+  .about_us-text-block
+    padding: 30px 30px  
+
+  .about_us-container
+    flex-wrap: wrap
+    justify-content: center
+
+  #about_us 
+    padding-top: 0px
+
+@media (max-width: 1150px)   
+  #yoga_program
+    padding-top: 10px
+
+  .block_yoga-program-content
+    justify-content: center
+    margin-bottom: 10px
+
+  .about_us-container
+    margin-bottom: 0
+
+  #about_us_after .row 
+    padding: 25px 0
+
+  #yoga_price
+    padding-top: 10px
+
+  .price-container
+    justify-content: center
+    margin-bottom: 0px
+
+  .price-item-container  
+    margin-right: 10px
+    margin-bottom: 10px
+
+  .trainer-name
+    margin-bottom: 10px
+
+  .traine
+    padding-bottom: 0
+
+  .trainer-text 
+    padding: 0 10px 10px 0
+
+  footer
+    min-height: max-content
+    
+  .footer-container
+    padding-top: 10px
+    min-height: max-content
+    p
+      margin-bottom: 20px
+
+  .footer-block
+    flex-wrap: nowrap
+    justify-content: center
+
+  .footer-contacts
+    margin-bottom: 10px
+    padding: 10px
+
+  .footer-about 
+    margin: 15px
+    p
+      margin-bottom: 10px
+
+  .footer-contact-item
+    margin-bottom: 10px
+
+@media (max-width: 976px)   
+  .logo
+    margin: 0 15px
+
+  .footer-contact-item-block
+    display: block
+
+  .setion1-text1 
+    font-size: 28px
+    line-height: 30px
+
+  .setion1-text2
+    font-size: 20px
+    line-height: 20px
+
+  #form_trial_class
+    margin-right: 10px
+    margin-bottom: 10px
+
+
+@media (max-width: 678px)   
+  .menu-main
+    display: none
+
+  .menu-mob
+    display: flex
+
+  .logo
+    margin: 0 auto
+  .trainer-img
+    margin: 0
+
+@media (max-width: 594px)   
+  .trainer-container
+    flex-direction: column
+    min-height: 400px
+    padding-top: 10px
+    padding-right: 20px
+  .footer-block
+    flex-wrap: wrap
+  .gallery-item
+    width: 320px  
+    height: max-content
+  .image
+    width: 100% 
+
+  #trialclass .row
+    padding-top: 10px
+    flex-wrap: wrap
+
+  .yoga-program-content-item 
+    flex-direction: column
+    align-items: center
+    min-width: 100%
+    width: 100%
+
+  .program-content-item-img
+    width: 300px
+
+  .about-us-after-container
+    justify-content: center
+  .about_us-text-block
+    width: 100%
+  .about_us-slider
+    width: 80%  
+  .text-center-column
+    padding-left: 5px
+  
+  .text-elem,.text-elem2
+    display: none
+
+  .footer-contact-item
+    width: 100%

@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <link rel="stylesheet" href="css/app.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/app.js"></script>
     <title>Document</title>
 </head>
 
@@ -17,14 +16,29 @@
         <div class="container">
             <div class="row">
                 <ul class="menu-main">
-                    <li><a href="#" class="current">About us</a></li>
-                    <li><a href="#">Reservation</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#about_us" class="current">About us</a></li>
+                    <li><a href="#trialclass">Reservation</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <img class="logo" src="media/logo.svg" alt="logo">
-                    <li><a href="">Blog</a></li>
-                    <li><a href="">Elements</a></li>
-                    <li><a href="">Shop</a></li>
+                    <li><a href="#yoga_program">Blog</a></li>
+                    <li><a href="#about_us_after">Elements</a></li>
+                    <li><a href="#yoga_price">Shop</a></li>
                 </ul>
+                <div class="menu-mob">
+                    <a class="menu-yoga-mob" href="#"></a>
+                    <div class="menu-popup">
+                        <a class="menu-close" href="#"></a>
+                        <ul>
+                            <li><a href="#about_us" class="current">About us</a></li>
+                            <li><a href="#trialclass">Reservation</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#yoga_program">Blog</a></li>
+                            <li><a href="#about_us_after">Elements</a></li>
+                            <li><a href="#yoga_price">Shop</a></li>
+                        </ul>
+                    </div>
+                    <img class="logo" src="media/logo.svg" alt="logo">
+                </div>
             </div>
         </div>
     </header>
@@ -109,35 +123,319 @@
         </div>
     </section>
     <section id="gallery" class="gallery clearfix">
-        <div class="galery-container">
-            <div class="galery-item">
+        <div class="gallery-container">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery1.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
-            <div class="galery-item">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery2.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
-            <div class="galery-item">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery3.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
-            <div class="galery-item">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery4.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
-            <div class="galery-item">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery5.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
-            <div class="galery-item">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery6.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
-            <div class="galery-item">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery7.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
-            <div class="galery-item">
+            <div class="gallery-item">
                 <img class="image" src="media/gallery8.jpg" alt="">
+                <div class="gallery-item-hover"></div>
             </div>
         </div>
     </section>
-    
-    
+    <section id="about_us">
+        <div class="container">
+            <div class="row">
+                <div class="about_us-container">
+                    <div class="about_us-text-block">
+                        <p class="about_us-title">ABOUT US</p>
+                        <p class="about_us-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation toui
+                            ullamcomi laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor it in lorei
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur lorem ispum loting sokui.</p>
+                    </div>
+                    <div class="about_us-slider">
+                        <div class="slick-slider">
+                            <div>
+                                <img src="media/slider.jpg" alt="" class="slider-item-img">
+                            </div>
+                            <div>
+                                <img src="media/slider.jpg" alt="" class="slider-item-img">
+                            </div>
+                            <div>
+                                <img src="media/slider.jpg" alt="" class="slider-item-img">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about_us_after">
+        <div class="container">
+            <div class="row">
+                <div class="about-us-after-container">
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title">IMPROVED OVERALL <br> HEALTH</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title">INCREASED <br> CONCENTRATION</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title">BLANCE<br> YOUR MIND</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title">SLEEP <br> BETTER</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title">WEIGHT LOSS</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title">STRENGTHENS <br> YOUR BONES</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title">INCREASED <br> FLEXIBILITY</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                    <div class="about-us-after-item">
+                        <div>
+                            <img class="about-us-after-img" src="media/image-after.svg" alt="">
+                            <p class="about-us-after-title"> LOWER BLOOD <br> PRESSURE</p>
+                        </div>
+                        <p class="about-us-after-text">Enim ad minim veniam, quis <br> nostrud exercitation toui
+                            ullamcomi <br> laboris nisi ut
+                            aliquip ex ea com.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="yoga_price">
+        <div class="container">
+            <div class="row">
+                <div class="price-container">
+                    <div class="price-item-container">
+                        <div class="price" id="price_elem1">
+                            <p class="price-dollar">$</p>
+                            <div class="price-number">
+                                <p class="price-num">49</p>
+                                <p class="price-month"> / mohth</p>
+                            </div>
+                        </div>
+                        <div class="price-conditions">
+                            <p class="conditions">ENTRY DATE: MON – FRI</p>
+                            <p class="conditions">ENTRY TIME: 8A.M – 8P.M</p>
+                            <p class="conditions">NUTRITION ADVICER: NO</p>
+                            <div class="button-container">
+                                <button id="price_button1" class="price-button" onmouseover="changeItem1()"
+                                    onmouseout="rechangeItem1()">By now</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="price-item-container">
+                        <div class="price" id="price_elem2">
+                            <p class="price-dollar">$</p>
+                            <div class="price-number">
+                                <p class="price-num">69</p>
+                                <p class="price-month"> / mohth</p>
+                            </div>
+                        </div>
+                        <div class="price-conditions">
+                            <p class="conditions">ENTRY DATE: MON – FRI</p>
+                            <p class="conditions">ENTRY TIME: 8A.M – 8P.M</p>
+                            <p class="conditions">NUTRITION ADVICER: NO</p>
+                            <div class="button-container">
+                                <button id="price_button2" class="price-button" onmouseover="changeItem2()"
+                                    onmouseout="rechangeItem2()">By now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-item-container">
+                        <div class="price" id="price_elem3">
+                            <p class="price-dollar">$</p>
+                            <div class="price-number">
+                                <p class="price-num">99</p>
+                                <p class="price-month"> / mohth</p>
+                            </div>
+                        </div>
+                        <div class="price-conditions">
+                            <p class="conditions">ENTRY DATE: MON – FRI</p>
+                            <p class="conditions">ENTRY TIME: 8A.M – 8P.M</p>
+                            <p class="conditions">NUTRITION ADVICER: NO</p>
+                            <div class="button-container" id="button_container">
+                                <button id="price_button3" class="price-button" onmouseover="changeItem3()"
+                                    onmouseout="rechangeItem3()">By now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row traine">
+                <div class="trainer-container">
+                    <div class="trainer-img">
+                        <img src="media/photo.png" alt="">
+                    </div>
+                    <div class="trainer-text-container">
+                        <div class="text-elem">
+                            <img class="cav1" src="media/cav1.svg" alt="">
+                            <div class="traine-line"></div>
+                        </div>
+                        <div class="text-center-column">
+                            <p class="trainer-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                toui
+                                ullamcomi laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="trainer-name">
+                                <p>Trainer</p>
+                                <span>Laura Shepard</spsn>
+                            </div>
+                            <div class="trainer-list">
+                                <img src="media/bt-arrow-prew.svg" alt="">
+                                <div class="traine-next">
+                                    <img src="media/photo-next.png" alt="">
+                                    <div class="traine-next-name">
+                                        <p>Sara Taylor</p>
+                                        <span>Trainer</span>
+                                    </div>
+                                </div>
+                                <img src="media/bt-arrow-next.svg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="text-elem2">
+                            <img class="cav2" src="media/cav2.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="trainer-pointer">
+                        <img src="media/point.svg" alt="">
+                        <img src="media/point2.svg" alt="">
+                        <img src="media/point.svg" alt="">
+                        <img src="media/point.svg" alt="">
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-container">
+                    <div class="footer-block">
+                        <div class="footer-about">
+                            <p>ABOUT</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad m inim veniam, quis nostrud
+                                exercitation toui ullamcomi laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <div class="footer-social">
+                                <img src="media/pinterest-outlined-logo.svg" alt="">
+                                <img src="media/twitter-social-outlined-logo.svg" alt="">
+                                <img src="media/facebook-logo-outline.svg" alt="">
+                                <img src="media/google-plus-outlined-logo-social-symbol.svg" alt="">
+                                <img src="media/instagram-social-outlined-logo.svg" alt="">
+                            </div>
+
+                        </div>
+
+                        <div class="footer-contacts">
+                            <p class="cont">CONTACT US</p>
+                            <div class="footer-contact-item-block">
+                                <div class="footer-contact-item">
+                                    <img src="media/placeholder.svg" alt="">
+                                    <p>5419 Joseph Mountains <br> Apt. 716</p>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <img src="media/envelope.svg" alt="">
+                                    <p>joga.info@example.com</p>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <img src="media/phone-call.svg" alt="">
+                                    <p>+1 234 567 89+1 234 678 90</p>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <img src="media//planet-earth.svg" alt="">
+                                    <p>www.example.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-end">
+            <p>Copyright © 2016-2017 Yoga classes</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
