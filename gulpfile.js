@@ -39,27 +39,19 @@ function styles() {
 }
 async function images() {
 	imagecomp(
-		"app/media/**/*", // Берём все изображения из папки источника
-		"app/media/dest/", // Выгружаем оптимизированные изображения в папку назначения
-		{ compress_force: false, statistic: true, autoupdate: true }, false, // Настраиваем основные параметры
-		{ jpg: { engine: "mozjpeg", command: ["-quality", "75"] } }, // Сжимаем и оптимизируем изображеня
+		"app/media/**/*", 
+		"app/media/dest/", 
+		{ compress_force: false, statistic: true, autoupdate: true }, false, 
+		{ jpg: { engine: "mozjpeg", command: ["-quality", "75"] } }, 
 		{ png: { engine: "pngquant", command: ["--quality=75-100", "-o"] } },
 		{ svg: { engine: "svgo", command: "--multipass" } },
 		{ gif: { engine: "gifsicle", command: ["--colors", "64", "--use-col=web"] } },
-		function (err, completed) { // Обновляем страницу по завершению
+		function (err, completed) { 
 			if (completed === true) {
 				browserSync.reload()
 			}
 		}
 	)
-}
-function buildcopy() {
-	return src([ 
-		'app/css/**/*.min.css',
-		'app/js/**/*.min.js',
-		'app/**/*.html',
-		], { base: 'app' })
-	.pipe(dest('dist'))
 }
 
 function cleanimg() {
@@ -70,10 +62,11 @@ function buildcopy() {
 	return src([ 
 		'app/css/**/*.min.css',
 		'app/js/**/*.min.js',
-		'app/media/dest/**/*',
+		'app/slick/**/*',
+		'app/media/dest/*',
 		'app/**/*.html',
 		], { base: 'app' }) 
-	.pipe(dest('dist'))
+	.pipe(dest('dist')) 
 }
 function cleandist() {
 	return del('dist/**/*', { force: true }) 
